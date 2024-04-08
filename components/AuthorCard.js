@@ -4,6 +4,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 function AuthorCard({ authorObj }) {
+  /* In components we are just returning the jsx of that component with its given props */
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
