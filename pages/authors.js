@@ -9,6 +9,7 @@ export default function Author() {
   const [authors, setAuthor] = useState([]);
 
   const { user } = useAuth();
+  console.warn({ user });
 
   const getAllAuthors = () => {
     getAuthors(user.uid).then(setAuthor);
