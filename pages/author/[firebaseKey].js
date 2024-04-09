@@ -15,7 +15,6 @@ export default function ViewAuthor() {
 
   useEffect(() => {
     viewAuthorDetails(firebaseKey).then(setAuthorDetail);
-    console.warn(viewAuthorDetails(firebaseKey));
   }, [firebaseKey]);
 
   return (
