@@ -37,7 +37,7 @@ function AuthorCard({ authorObj, onUpdate }) {
           <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
             <Button variant="success">EDIT</Button>
           </Link>
-          <Button onClick={toggleFavorite}>{authorObj.favorite ? '❤️' : '🤍' } </Button>
+          <Button onClick={toggleFavorite} className="my-btn"><span>{authorObj.favorite ? '❤️' : '🤍'}</span></Button>
           <Button variant="danger" onClick={deleteAuthorAndBooks}>DELETE</Button>
         </div>
       </Card.Body>
