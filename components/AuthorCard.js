@@ -31,20 +31,19 @@ function AuthorCard({ authorObj, onUpdate }) {
         <div className="d-flex flex-wrap" style={{ gap: '10px' }}>
           {router.pathname === '/authors' && (
           <Link href={`/author/${authorObj.firebaseKey}`} passHref>
-            <Button variant="primary">VIEW</Button>
+            <Button style={{ backgroundColor: '#f4a261', border: 'none' }}>🔍</Button>
           </Link>
           )}
           <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
-            <Button variant="success">EDIT</Button>
+            <Button style={{ backgroundColor: '#90a955', border: 'none' }}>✏️</Button>
           </Link>
-          <Button onClick={toggleFavorite} className="my-btn"><span>{authorObj.favorite ? '❤️' : '🤍'}</span></Button>
-          <Button variant="danger" onClick={deleteAuthorAndBooks}>DELETE</Button>
+          <Button style={{ backgroundColor: '#ffc8dd', border: 'none' }} onClick={toggleFavorite} className="my-btn"><span>{authorObj.favorite ? '❤️' : '🤍'}</span></Button>
+          <Button style={{ backgroundColor: '#ef5d60', border: 'none' }} onClick={deleteAuthorAndBooks}>🗑️</Button>
         </div>
       </Card.Body>
     </Card>
   );
 }
-
 AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
     first_name: PropTypes.string,
