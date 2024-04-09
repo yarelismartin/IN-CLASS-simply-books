@@ -11,7 +11,6 @@ export default function Author() {
 
   /* accessing user info with useAuth */
   const { user } = useAuth();
-  console.warn({ user });
 
   /* function that will fetch all authors based on uid
   setAuthor is used because it's how we update authors */
@@ -38,7 +37,7 @@ export default function Author() {
         {/* In React, the key prop is a special attribute that you
         can include when rendering a list of elements. It's used to help React identify which items have changed, are added, or are removed in a list. */}
         {authors.map((author) => (
-          <AuthorCard key={author.firebaseKey} authorObj={author} />
+          <AuthorCard key={author.firebaseKey} authorObj={author} onUpdate={getAllAuthors} />
         ))}
       </div>
 
