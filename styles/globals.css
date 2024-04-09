@@ -8,3 +8,16 @@ body {
   border-radius: 50%;
   width: 30px;
 }
+
+.my-btn {
+  position: relative; /* the position of the button relative to its normal position in the document flow. used to position the heart emoji inside the button. */
+}
+
+.my-btn:hover::before { /* ::before pseudo-element is used to insert content before the button's content. */
+  content: '❤️'; /* Display heart emoji on hover */
+  position: absolute; /* positioning the heart emoji relative to the nearest positioned ancestor (in this case, the button itself). */
+  top: 50%; /* position the heart emoji at the center of the button. */
+  left: 50%;
+  transform: translate(-50%, -50%);/*  moves the heart emoji up and left by 50% of its own size, effectively centering it within the button. */
+  font-size: 16px; 
+}
