@@ -29,4 +29,13 @@ const deleteAuthorBooks = (authorId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-export { viewBookDetails, viewAuthorDetails, deleteAuthorBooks };
+const deleteAuthorAndAuthorBooks = async (authorFirebaseKey) => {
+  const authorBooks = await getAuthorBooks(authorFirebaseKey);
+  const deleteBooksPromises = await authorBooks.map((abObj) => deleteBook(abObj.firebaseKey));
+
+  await Promise.all(deleteBooksPromises).then(() => deleteSingleAuthor(authorFirebaseKey));
+};
+
+export {
+  viewBookDetails, viewAuthorDetails, deleteAuthorBooks, deleteAuthorAndAuthorBooks,
+};
