@@ -19,10 +19,10 @@ export default function ViewAuthor() {
 
   return (
     <div>
-      <AuthorCard key={authorDetail.firebaseKey} authorObj={authorDetail} />
+      <AuthorCard key={authorDetail.firebaseKey} authorObj={authorDetail} onUpdate={setAuthorDetail} />
       <div className="d-flex flex-wrap">
         {authorDetail.books?.map((bookObj) => (
-          <BookCard key={bookObj.firebaseKey} bookObj={bookObj} />
+          <BookCard key={bookObj.firebaseKey} bookObj={bookObj} onUpdate={setAuthorDetail} />
         ))}
       </div>
     </div>
