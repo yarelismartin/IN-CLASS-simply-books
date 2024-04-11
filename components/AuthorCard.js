@@ -23,6 +23,7 @@ function AuthorCard({ authorObj, onUpdate }) {
       deleteAuthorAndAuthorBooks(authorObj.firebaseKey).then(onUpdate);
     }
   };
+
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
@@ -44,6 +45,7 @@ function AuthorCard({ authorObj, onUpdate }) {
     </Card>
   );
 }
+
 AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
     first_name: PropTypes.string,
